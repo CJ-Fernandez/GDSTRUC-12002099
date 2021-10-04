@@ -4,24 +4,69 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int[] numbers = new int[5];
+      int[] numbers = new int[10];
 
-        numbers[0] = 90;
-        numbers[1] = 85;
-        numbers[2] = -15;
-        numbers[3] = 50;
-        numbers[4] = 105;
+      numbers[0] = 35;
+      numbers[1] = 69;
+      numbers[2] = 1;
+      numbers[3] = 10;
+      numbers[4] = -50;
+      numbers[5] = 320;
+      numbers[6] = 63;
+      numbers[7] = 58;
+      numbers[8] = 26;
+      numbers[9] = 13;
 
-        int index = 1;
+      System.out.println("Before Selection Sort:");
+      printArrayElements(numbers);
 
-        for (int i = 0; i < numbers.length; i++)
+      selectionSort(numbers);
+
+      System.out.println("\n\nAfter selection Sort:");
+      printArrayElements(numbers);
+    }
+
+    private static void bubbleSort(int[] arr)
+    {
+      for (int lastSortedIndex = arr.length - 1; lastSortedIndex > 0; lastSortedIndex--)
+      {
+          for (int i = 0; i < lastSortedIndex; i++)
+          {
+              if (arr[i] > arr[i + 1])
+              {
+                  int temp = arr[i];
+                  arr[i] = arr[i + 1];
+                  arr[i + 1] = temp;
+              }
+          }
+      }
+    }
+
+    private static void selectionSort(int[] arr)
+    {
+        for (int lastSortedIndex = arr.length - 1; lastSortedIndex > 0; lastSortedIndex--)
         {
-            if (numbers[i] ==50)
+            int largestIndex = 0;
+
+            for (int i = 1; i <= lastSortedIndex; i++)
             {
-                index = i;
-                break;
+                if (arr[i] > arr[largestIndex])
+                {
+                    largestIndex = i;
+                }
             }
+
+            int temp = arr[lastSortedIndex];
+            arr[lastSortedIndex] = arr[largestIndex];
+            arr[largestIndex] = temp;
+
         }
-        System.out.println(index);
+    }
+
+    private static void  printArrayElements(int[] arr)
+    {
+      for (int j : arr) {
+        System.out.println( j + " ");
+      }
     }
 }
