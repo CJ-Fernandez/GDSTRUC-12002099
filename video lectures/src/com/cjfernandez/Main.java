@@ -66,7 +66,7 @@ public class Main {
     private static void  printArrayElements(int[] arr)
     {
       for (int j : arr) {
-        System.out.println( j + " ");
+        System.out.println(j);
       }
     }
 }
