@@ -14,7 +14,7 @@ public class PlayerLinkedList {
         PlayerNode current = head;
         System.out.print("HEAD -> ");
         while (current != null) {
-            System.out.print(current);
+            System.out.print(current.getPlayer());
             System.out.print(" -> ");
             current = current.getNextPlayer();
         }
