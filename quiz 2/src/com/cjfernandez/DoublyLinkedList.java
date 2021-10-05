@@ -26,13 +26,14 @@ public class DoublyLinkedList {
 
     public void printNodes() {
         PlayerNode current = head;
-        if(head == null) {
+        if(head == null) 
+        {
             System.out.println("Doubly linked list is empty");
             return;
         }
         System.out.println("Nodes of doubly linked list: ");
-        while(current != null) {
-            //Print each node and then go to next.
+        while(current != null) 
+        {
             System.out.print(current.getPlayer() + " ");
             current = current.getNextPlayer();
         }
